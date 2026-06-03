@@ -6,18 +6,18 @@ import { Card } from '@/components/ui/card'
 
 const timeline = [
   {
-    year: '2023 - Present',
+    year: '2023 - July 2026',
     title: 'Data Science & AI Student',
     company: 'Breda University of Applied Sciences',
-    description: 'Currently pursuing Bachelor in Data Science and AI, expected graduation July 2026. Specializing in machine learning, deep learning, and AI systems.',
-    achievements: ['10-15 completed projects', '1 research paper published', 'Near graduation (2026)'],
+    description: 'Pursuing a Bachelor in Data Science and Artificial Intelligence with a strong foundation in machine learning, statistical analysis, and data visualization.',
+    achievements: ['Expected graduation July 2026', '2 unpublished AI research manuscripts', 'Practical coursework in machine learning and visualization'],
   },
   {
     year: 'August 2024 - January 2026',
-    title: 'AI Engineer',
+    title: 'Digital Data Architect & AI Developer',
     company: 'June20 Marketing Agency',
-    description: 'Built AI-powered solutions and automated systems for marketing analytics. Developed dashboards, predictive models, and data pipelines for clients.',
-    achievements: ['Real-time analytics dashboards', 'Automated reporting systems', 'Client data pipeline integration'],
+    description: 'Built and maintained data pipelines and live dashboards for social and programmatic campaigns, while developing AI automation solutions for the media team.',
+    achievements: ['Automated campaign reporting', 'AI-driven personalization for outreach', 'Operational AI agents for internal workflows'],
   },
 ]
 
@@ -81,13 +81,13 @@ export function About() {
             <h3 className="text-2xl font-semibold text-foreground mb-6">My Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                {"I'm a Data Science and AI student at Breda University of Applied Sciences, graduating in July 2026. With over 2 years of hands-on experience, I've completed 10-15 projects and published 1 research paper."}
+                {"I'm a Data Science and Artificial Intelligence student at Breda University of Applied Sciences, graduating in July 2026. I have completed over 10 projects and authored two unpublished AI research manuscripts."}
               </p>
               <p>
-                {"As an AI Engineer at June20 (August 2024 - January 2026), I specialized in NLP, predictive analytics, and automated data pipelines. My work spans video transcription systems, sports analytics, and road safety predictions for major Dutch organizations."}
+                {"During my internship at June20 Marketing Agency in Antwerp, I built live campaign dashboards, automated reporting systems, and AI agents that improved media team workflows and engagement personalization."}
               </p>
               <p>
-                {"I thrive on transforming complex data into actionable insights and building production-ready AI solutions. Always eager to tackle challenging problems and push the boundaries of what's possible with machine learning."}
+                {"I enjoy turning complex data into clear business value and building intelligent systems that support teams with actionable insights."}
               </p>
             </div>
 

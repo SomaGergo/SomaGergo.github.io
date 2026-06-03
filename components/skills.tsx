@@ -218,10 +218,10 @@ export function Skills() {
       >
         <div className="inline-flex items-center gap-8 px-8 py-6 bg-card/50 border border-border rounded-xl">
           {[
-            { label: 'Years Experience', value: '5+' },
-            { label: 'Projects Completed', value: '50+' },
-            { label: 'Research Papers', value: '3' },
-            { label: 'Kaggle Rank', value: 'Expert' },
+            { label: 'Years Experience', value: '3+' },
+            { label: 'Projects Completed', value: '10+' },
+            { label: 'AI Automations', value: '20+' },
+            { label: 'Research Manuscripts', value: '2' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
