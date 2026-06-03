@@ -8,25 +8,11 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Portfolio - Developer & Designer',
-  description: 'Professional portfolio showcasing projects, skills, and experience in modern web development',
-  generator: 'v0.app',
+  title: 'Soma Gergo Portfolio',
+  description: 'Portfolio website for Soma Zsombor Gergo, showcasing AI, data science, and mobile projects.',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/placeholder-logo.svg',
+    apple: '/placeholder-logo.png',
   },
 }
 

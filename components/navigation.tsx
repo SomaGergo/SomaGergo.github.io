@@ -90,7 +90,7 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
                   />
                 </div>
                 <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                  AI.DS
+                  Soma
                 </span>
               </div>
             </motion.button>

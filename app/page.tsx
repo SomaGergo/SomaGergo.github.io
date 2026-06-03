@@ -9,7 +9,6 @@ import { Skills } from '@/components/skills'
 import { About } from '@/components/about'
 import { Contact } from '@/components/contact'
 import { Navigation } from '@/components/navigation'
-import { CursorEffect } from '@/components/cursor-effect'
 import { AnimatedBackground } from '@/components/animated-background'
 
 export default function Page() {
@@ -22,7 +21,6 @@ export default function Page() {
       <div className="min-h-screen bg-background overflow-x-hidden">
         {loadingComplete && (
           <>
-            <CursorEffect />
             <AnimatedBackground />
           </>
         )}
