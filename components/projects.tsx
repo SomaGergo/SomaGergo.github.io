@@ -31,6 +31,14 @@ const projects = [
     gradient: 'from-emerald-500/20 to-lime-500/20',
   },
   {
+    title: 'NeuroScan AI',
+    description: '3D brain tumor segmentation prototype that uses multi-modal MRI and a custom 3D U-Net to generate tumor sub-region masks.',
+    details: 'Built as a BSc graduation project, this system combines a FastAPI web interface, sliding-window inference, and uncertainty-aware outputs for educational and research use.',
+    technologies: ['Python', 'PyTorch', 'MONAI', 'FastAPI', 'Docker', '3D U-Net'],
+    metrics: { dataset: '484 cases', dice: '0.851', regions: '3' },
+    gradient: 'from-cyan-500/20 to-blue-500/20',
+  },
+  {
     title: 'Reporting Dashboard',
     description: 'Live dashboard and automated reporting system for campaign analytics.',
     details: 'Designed dashboards and automation tools to reduce manual reporting effort and surface real-time campaign insights across social and programmatic advertising.',
@@ -47,11 +55,11 @@ const projects = [
     gradient: 'from-green-500/20 to-emerald-500/20',
   },
   {
-    title: 'iOS AI Mobile App',
-    description: 'In-progress native iOS app bringing AI features to mobile users with a polished, modern interface.',
-    details: 'Currently building a SwiftUI app that integrates CoreML and mobile-first design to deliver AI-powered utilities on iOS.',
+    title: 'Reground',
+    description: 'A screen-time blocker app that helps people step away from their phones and build healthier habits through real-world action.',
+    details: 'The concept focuses on reducing mindless scrolling, encouraging offline time, and supporting habit-building through simple, motivating experiences.',
     technologies: ['SwiftUI', 'CoreML', 'Swift', 'iOS', 'Firebase'],
-    metrics: { platform: 'iOS', status: 'In Progress', users: 'Early Beta' },
+    metrics: { platform: 'iOS', status: 'Concept', impact: 'Habits' },
     gradient: 'from-sky-500/20 to-indigo-500/20',
   },
 ]
