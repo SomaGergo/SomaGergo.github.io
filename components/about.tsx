@@ -10,12 +10,12 @@ const timeline = [
     title: 'Data Science & AI Student',
     company: 'Breda University of Applied Sciences',
     description: 'Pursuing a Bachelor in Data Science and Artificial Intelligence with a strong foundation in machine learning, statistical analysis, and data visualization.',
-    achievements: ['Expected graduation July 2026', '2 unpublished AI research manuscripts', 'Practical coursework in machine learning and visualization'],
+    achievements: ['Expected graduation July 2026', '10+ applied projects', 'Practical coursework in machine learning and visualization'],
   },
   {
     year: 'August 2024 - January 2026',
     title: 'Digital Data Architect & AI Developer',
-    company: 'June20 Marketing Agency',
+    company: 'Marketing Agency',
     description: 'Built and maintained data pipelines and live dashboards for social and programmatic campaigns, while developing AI automation solutions for the media team.',
     achievements: ['Automated campaign reporting', 'AI-driven personalization for outreach', 'Operational AI agents for internal workflows'],
   },
@@ -81,10 +81,10 @@ export function About() {
             <h3 className="text-2xl font-semibold text-foreground mb-6">My Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                {"I'm a Data Science and Artificial Intelligence student at Breda University of Applied Sciences, graduating in July 2026. I have completed over 10 projects and authored two unpublished AI research manuscripts."}
+                {"I'm a Data Science and Artificial Intelligence student at Breda University of Applied Sciences, graduating in July 2026. I have completed over 10 applied projects across machine learning, analytics, and AI systems."}
               </p>
               <p>
-                {"During my internship at June20 Marketing Agency in Antwerp, I built live campaign dashboards, automated reporting systems, and AI agents that improved media team workflows and engagement personalization."}
+                {"During my internship at a marketing agency in Antwerp, I built live campaign dashboards, automated reporting systems, and AI agents that improved media team workflows and engagement personalization."}
               </p>
               <p>
                 {"I enjoy turning complex data into clear business value and building intelligent systems that support teams with actionable insights."}

@@ -31,8 +31,8 @@ const projects = [
     gradient: 'from-emerald-500/20 to-lime-500/20',
   },
   {
-    title: 'June20 Reporting Dashboard',
-    description: 'Live dashboard and automated reporting system for campaign analytics at June20.',
+    title: 'Reporting Dashboard',
+    description: 'Live dashboard and automated reporting system for campaign analytics.',
     details: 'Designed dashboards and automation tools to reduce manual reporting effort and surface real-time campaign insights across social and programmatic advertising.',
     technologies: ['Python', 'Dash', 'Plotly', 'SQL', 'API'],
     metrics: { clients: '10+', reports: 'Realtime', automation: '80%' },

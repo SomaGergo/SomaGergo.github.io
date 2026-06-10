@@ -22,7 +22,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
       </svg>
     ),
-    skills: ['PyTorch', 'TensorFlow', 'Keras', 'CNN', 'RNN/LSTM', 'GANs', 'Transformers'],
+    skills: ['PyTorch', 'TensorFlow', 'Keras', 'CNN', 'RNN/LSTM', 'Autoencoders', 'Transformers'],
     color: 'from-purple-500/20 to-pink-500/20',
   },
   {
@@ -53,7 +53,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
-    skills: ['Apache Spark', 'Airflow', 'Kafka', 'Pandas', 'NumPy', 'SQL', 'ETL Pipelines'],
+    skills: ['Apache Spark', 'Airflow', 'Pandas', 'NumPy', 'SQL', 'ETL Pipelines', 'Data Warehousing'],
     color: 'from-blue-500/20 to-cyan-500/20',
   },
   {
@@ -63,7 +63,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
-    skills: ['MLflow', 'Kubeflow', 'Docker', 'Kubernetes', 'FastAPI', 'AWS SageMaker'],
+    skills: ['MLflow', 'Docker', 'FastAPI', 'Model Deployment', 'Experiment Tracking', 'Cloud Basics'],
     color: 'from-yellow-500/20 to-orange-500/20',
   },
 ]
@@ -99,7 +99,7 @@ export function Skills() {
           Technical <span className="text-primary">Expertise</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">
-          {'Specialized in AI/ML technologies with hands-on experience across the entire data science lifecycle'}
+          {'Specialized in AI/ML technologies with hands-on experience across machine learning, analytics, and applied data projects'}
         </p>
       </motion.div>
 
@@ -218,10 +218,10 @@ export function Skills() {
       >
         <div className="inline-flex items-center gap-8 px-8 py-6 bg-card/50 border border-border rounded-xl">
           {[
-            { label: 'Years Experience', value: '3+' },
+            { label: 'Practical Experience', value: '1.5+' },
             { label: 'Projects Completed', value: '10+' },
             { label: 'AI Automations', value: '20+' },
-            { label: 'Research Manuscripts', value: '2' },
+            { label: 'Applied Focus', value: 'ML + Data' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
