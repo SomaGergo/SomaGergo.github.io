@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from '@/components/loading-screen'
 import { Hero } from '@/components/hero'
@@ -11,13 +11,28 @@ import { Contact } from '@/components/contact'
 import { Navigation } from '@/components/navigation'
 import { AnimatedBackground } from '@/components/animated-background'
 
+const LOADING_SCREEN_SESSION_KEY = 'portfolio-loading-complete'
+
 export default function Page() {
   const [activeSection, setActiveSection] = useState('home')
-  const [loadingComplete, setLoadingComplete] = useState(false)
+  const [loadingComplete, setLoadingComplete] = useState(true)
+  const [skipLoadingScreen, setSkipLoadingScreen] = useState(true)
+
+  useEffect(() => {
+    const hasSeenLoadingScreen = sessionStorage.getItem(LOADING_SCREEN_SESSION_KEY) === 'true'
+
+    setSkipLoadingScreen(hasSeenLoadingScreen)
+    setLoadingComplete(hasSeenLoadingScreen)
+  }, [])
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem(LOADING_SCREEN_SESSION_KEY, 'true')
+    setLoadingComplete(true)
+  }
 
   return (
     <>
-      <LoadingScreen onComplete={() => setLoadingComplete(true)} />
+      <LoadingScreen onComplete={handleLoadingComplete} skip={skipLoadingScreen} />
       <div className="min-h-screen bg-background overflow-x-hidden">
         {loadingComplete && (
           <>

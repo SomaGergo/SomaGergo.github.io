@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 interface LoadingScreenProps {
   onComplete?: () => void
+  skip?: boolean
 }
 
-export function LoadingScreen({ onComplete }: LoadingScreenProps) {
-  const [loading, setLoading] = useState(true)
+export function LoadingScreen({ onComplete, skip = false }: LoadingScreenProps) {
+  const [loading, setLoading] = useState(!skip)
   const [progress, setProgress] = useState(0)
   const [stage, setStage] = useState(0)
 
@@ -20,6 +21,12 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   ]
 
   useEffect(() => {
+    if (skip) {
+      setLoading(false)
+      onComplete?.()
+      return
+    }
+
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -41,7 +48,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
     }, 25)
 
     return () => clearInterval(interval)
-  }, [stage, onComplete])
+  }, [skip, stage, onComplete])
 
   return (
     <AnimatePresence>
