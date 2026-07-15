@@ -1,73 +1,16 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-
-const projects = [
-  {
-    title: 'NLP Video Transcription Pipeline',
-    description: 'Advanced NLP pipeline that transcribes video and detects emotions while translating to multiple languages.',
-    details: 'Built an end-to-end system for speech-to-text, multi-language translation, and sentence-level emotion scoring to improve accessibility and content analytics.',
-    technologies: ['Python', 'Whisper', 'Transformers', 'FFmpeg', 'spaCy'],
-    metrics: { languages: '20+', accuracy: '92%', emotions: '7' },
-    gradient: 'from-blue-500/20 to-cyan-500/20',
-  },
-  {
-    title: 'NAC Breda Signing Predictor',
-    description: 'Machine learning system predicting the best football player signings for NAC Breda using performance and market data.',
-    details: 'Developed models that analyze player statistics, team fit, and market value to recommend optimal recruits for the next season.',
-    technologies: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas', 'Matplotlib'],
-    metrics: { features: '30+', models: '5', accuracy: '87%' },
-    gradient: 'from-purple-500/20 to-pink-500/20',
-  },
-  {
-    title: 'Retail Demographics Classifier',
-    description: 'Keras-based image classifier that profiles retail customer demographics to support store analytics.',
-    details: 'Trained deep learning models on customer image data to infer age groups and demographics, helping retail teams understand shopper patterns.',
-    technologies: ['Python', 'Keras', 'TensorFlow', 'OpenCV', 'Pandas'],
-    metrics: { dataset: '10k+', accuracy: '89%', classes: '4' },
-    gradient: 'from-emerald-500/20 to-lime-500/20',
-  },
-  {
-    title: 'NeuroScan AI',
-    description: '3D brain tumor segmentation prototype that uses multi-modal MRI and a custom 3D U-Net to generate tumor sub-region masks.',
-    details: 'Built as a BSc graduation project, this system combines a FastAPI web interface, sliding-window inference, and uncertainty-aware outputs for educational and research use.',
-    technologies: ['Python', 'PyTorch', 'MONAI', 'FastAPI', 'Docker', '3D U-Net'],
-    metrics: { dataset: '484 cases', dice: '0.851', regions: '3' },
-    gradient: 'from-cyan-500/20 to-blue-500/20',
-  },
-  {
-    title: 'Reporting Dashboard',
-    description: 'Live dashboard and automated reporting system for campaign analytics.',
-    details: 'Designed dashboards and automation tools to reduce manual reporting effort and surface real-time campaign insights across social and programmatic advertising.',
-    technologies: ['Python', 'Dash', 'Plotly', 'SQL', 'API'],
-    metrics: { clients: '10+', reports: 'Realtime', automation: '80%' },
-    gradient: 'from-orange-500/20 to-red-500/20',
-  },
-  {
-    title: 'ANWB Accident Risk Model',
-    description: 'Predictive machine learning model estimating road accident likelihood using environmental and traffic data.',
-    details: 'Built accident probability models for ANWB using historical, weather, and roadway data to create actionable risk insights.',
-    technologies: ['Python', 'TensorFlow', 'Pandas', 'GeoPandas', 'Folium'],
-    metrics: { factors: '25+', accuracy: '84%', coverage: 'NL' },
-    gradient: 'from-green-500/20 to-emerald-500/20',
-  },
-  {
-    title: 'Reground',
-    description: 'A screen-time blocker app that helps people step away from their phones and build healthier habits through real-world action.',
-    details: 'The concept focuses on reducing mindless scrolling, encouraging offline time, and supporting habit-building through simple, motivating experiences.',
-    technologies: ['SwiftUI', 'CoreML', 'Swift', 'iOS', 'Firebase'],
-    metrics: { platform: 'iOS', status: 'Concept', impact: 'Habits' },
-    gradient: 'from-sky-500/20 to-indigo-500/20',
-  },
-]
+import { projects } from '@/lib/projects'
 
 export function Projects() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -110,14 +53,12 @@ export function Projects() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: index * 0.1 }}
             whileHover={{ y: -8 }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
             className="relative"
           >
-            <Card className="h-full overflow-hidden border-border bg-card/95 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/10">
+            <Card className="h-full overflow-hidden border-border bg-card/95 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
               <div className="relative p-8 pt-10 space-y-5">
-                <div className="absolute -top-4 left-6 w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-cyan-200/20 blur-2xl" />
+                <div className="absolute -top-4 left-6 h-14 w-14 rounded-full bg-gradient-to-br from-primary/20 to-cyan-200/20 blur-2xl" />
                 <h3 className="text-2xl font-semibold text-foreground leading-tight">
                   {project.title}
                 </h3>
@@ -130,14 +71,14 @@ export function Projects() {
                     <Badge
                       key={tech}
                       variant="secondary"
-                      className="text-xs bg-secondary/50 text-secondary-foreground cursor-default"
+                      className="cursor-default bg-secondary/50 text-xs text-secondary-foreground"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 pt-4 border-t border-border/50">
+                <div className="grid grid-cols-3 gap-3 border-t border-border/50 pt-4">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div key={key} className="rounded-2xl bg-background/70 p-3 text-center">
                       <div className="text-lg font-bold text-primary">{value}</div>
@@ -149,6 +90,20 @@ export function Projects() {
                 <div className="mt-4 text-sm text-muted-foreground">
                   {project.details}
                 </div>
+
+                {project.contentFile ? (
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    Read project write-up
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                ) : (
+                  <div className="text-sm text-muted-foreground/70">
+                    Full case study coming soon
+                  </div>
+                )}
               </div>
             </Card>
           </motion.div>
