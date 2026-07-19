@@ -15,8 +15,8 @@ const LOADING_SCREEN_SESSION_KEY = 'portfolio-loading-complete'
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState('home')
-  const [loadingComplete, setLoadingComplete] = useState(true)
-  const [skipLoadingScreen, setSkipLoadingScreen] = useState(true)
+  const [loadingComplete, setLoadingComplete] = useState(false)
+  const [skipLoadingScreen, setSkipLoadingScreen] = useState<boolean | null>(null)
 
   useEffect(() => {
     const hasSeenLoadingScreen = sessionStorage.getItem(LOADING_SCREEN_SESSION_KEY) === 'true'
@@ -28,6 +28,10 @@ export default function Page() {
   const handleLoadingComplete = () => {
     sessionStorage.setItem(LOADING_SCREEN_SESSION_KEY, 'true')
     setLoadingComplete(true)
+  }
+
+  if (skipLoadingScreen === null) {
+    return null
   }
 
   return (
