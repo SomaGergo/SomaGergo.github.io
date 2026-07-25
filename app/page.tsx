@@ -61,13 +61,12 @@ export default function Page() {
             <Hero />
           </motion.section>
           
-          <motion.section 
-            id="projects" 
+          <motion.section
+            id="projects"
             className="min-h-screen py-20"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
             <Projects />
           </motion.section>
