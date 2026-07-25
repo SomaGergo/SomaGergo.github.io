@@ -7,10 +7,10 @@ import { Card } from '@/components/ui/card'
 const timeline = [
   {
     year: '2023 - July 2026',
-    title: 'Data Science & AI Student',
+    title: 'BSc in Data Science & AI',
     company: 'Breda University of Applied Sciences',
-    description: 'Pursuing a Bachelor in Data Science and Artificial Intelligence with a strong foundation in machine learning, statistical analysis, and data visualization.',
-    achievements: ['Expected graduation July 2026', '10+ applied projects', 'Practical coursework in machine learning and visualization'],
+    description: 'Graduated with a Bachelor of Science in Data Science and Artificial Intelligence, building a strong foundation in machine learning, statistical analysis, and data visualization.',
+    achievements: ['BSc diploma earned in July 2026', '10+ applied projects', 'Practical experience in machine learning and visualization'],
   },
   {
     year: 'August 2024 - January 2026',
@@ -81,7 +81,7 @@ export function About() {
             <h3 className="text-2xl font-semibold text-foreground mb-6">My Story</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                {"I'm a Data Science and Artificial Intelligence student at Breda University of Applied Sciences, graduating in July 2026. I have completed over 10 applied projects across machine learning, analytics, and AI systems."}
+                {"I graduated from Breda University of Applied Sciences with a BSc in Data Science and Artificial Intelligence in July 2026. I have completed over 10 applied projects across machine learning, analytics, and AI systems."}
               </p>
               <p>
                 {"During my internship at a marketing agency in Antwerp, I built live campaign dashboards, automated reporting systems, and AI agents that improved media team workflows and engagement personalization."}

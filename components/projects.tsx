@@ -7,19 +7,27 @@ import { ArrowRight } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { projects } from '@/lib/projects'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export function Projects() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
+    if (isMobile) {
+      setInView(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true)
+          observer.disconnect()
         }
       },
-      { threshold: 0.1, rootMargin: '-50px' }
+      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
     )
 
     if (containerRef.current) {
@@ -27,7 +35,7 @@ export function Projects() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMobile])
 
   return (
     <div ref={containerRef} className="max-w-7xl mx-auto px-6 py-20">
