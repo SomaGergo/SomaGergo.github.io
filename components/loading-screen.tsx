@@ -12,6 +12,9 @@ export function LoadingScreen({ onComplete, skip = false }: LoadingScreenProps) 
   const [loading, setLoading] = useState(!skip)
   const [progress, setProgress] = useState(0)
   const [stage, setStage] = useState(0)
+  const progressStep = 0.9
+  const progressIntervalMs = 30
+  const completionDelayMs = 700
 
   const stages = [
     'INITIALIZING NEURAL NETWORKS',
@@ -34,10 +37,10 @@ export function LoadingScreen({ onComplete, skip = false }: LoadingScreenProps) 
           setTimeout(() => {
             setLoading(false)
             onComplete?.()
-          }, 600)
+          }, completionDelayMs)
           return 100
         }
-        const newProgress = prev + 1.2
+        const newProgress = prev + progressStep
         
         if (newProgress >= 25 && stage === 0) setStage(1)
         if (newProgress >= 60 && stage === 1) setStage(2)
@@ -45,10 +48,10 @@ export function LoadingScreen({ onComplete, skip = false }: LoadingScreenProps) 
         
         return newProgress
       })
-    }, 25)
+    }, progressIntervalMs)
 
     return () => clearInterval(interval)
-  }, [skip, stage, onComplete])
+  }, [skip, stage, onComplete, completionDelayMs, progressIntervalMs, progressStep])
 
   return (
     <AnimatePresence>

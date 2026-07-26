@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
@@ -22,6 +23,10 @@ export function Contact() {
 
     return () => observer.disconnect()
   }, [])
+
+  const openCookiePreferences = () => {
+    window.dispatchEvent(new Event('open-cookie-preferences'))
+  }
 
   const contactInfo = [
     {
@@ -82,6 +87,22 @@ export function Contact() {
                   <span>{info.label}</span>
                 </a>
               ))}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-3 text-sm text-muted-foreground">
+              <Link
+                href="/privacy"
+                className="transition-colors hover:text-primary"
+              >
+                Privacy Policy
+              </Link>
+              <button
+                type="button"
+                onClick={openCookiePreferences}
+                className="transition-colors hover:text-primary"
+              >
+                Cookie Settings
+              </button>
             </div>
           </div>
         </Card>
