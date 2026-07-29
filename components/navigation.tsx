@@ -18,7 +18,7 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
       
-      const sections = ['home', 'projects', 'skills', 'about', 'contact']
+      const sections = ['home', 'services', 'projects', 'skills', 'about', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -45,10 +45,11 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
 
   const navItems = [
     { id: 'home', label: 'Home', index: '01' },
-    { id: 'projects', label: 'Projects', index: '02' },
-    { id: 'skills', label: 'Skills', index: '03' },
-    { id: 'about', label: 'About', index: '04' },
-    { id: 'contact', label: 'Contact', index: '05' },
+    { id: 'services', label: 'Services', index: '02' },
+    { id: 'projects', label: 'Projects', index: '03' },
+    { id: 'skills', label: 'Skills', index: '04' },
+    { id: 'about', label: 'About', index: '05' },
+    { id: 'contact', label: 'Contact', index: '06' },
   ]
 
   if (!visible) return null

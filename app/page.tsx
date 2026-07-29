@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from '@/components/loading-screen'
 import { Hero } from '@/components/hero'
+import { Services } from '@/components/services'
 import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { About } from '@/components/about'
@@ -59,6 +60,16 @@ export default function Page() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <Hero />
+          </motion.section>
+
+          <motion.section
+            id="services"
+            className="py-12"
+            initial={{ opacity: 0 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.05 }}
+          >
+            <Services />
           </motion.section>
           
           <motion.section

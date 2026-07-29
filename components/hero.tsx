@@ -56,12 +56,12 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <motion.button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              View Projects
+              View Services
             </motion.button>
 
             <motion.a
