@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { GOOGLE_CALENDAR_BOOKING_LINK } from '@/lib/site-config'
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -40,38 +41,43 @@ export function Hero() {
         >
           <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.35em] text-primary backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-primary" />
-            Available for opportunities
+            Freelance AI & data consultancy
           </div>
 
           <h1 className="text-5xl font-semibold leading-[0.95] text-foreground sm:text-6xl lg:text-8xl">
-            <span className="block">AI Engineer</span>
+            <span className="block">Turning business</span>
             <span className="mt-2 block bg-gradient-to-r from-primary via-cyan-300 to-primary bg-clip-text text-transparent">
-              & Data Scientist
+              challenges into practical AI solutions
             </span>
           </h1>
 
-          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Building machine learning systems, data products, and AI workflows that turn complex information into clear business value.
+          <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            I&apos;m Soma, an AI and data specialist helping businesses build intelligent automation,
+            custom machine learning models and data-driven products.
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Whether you have a clear technical project or simply a process that should work better,
+            I can help you identify and build the right solution.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <motion.button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              View Services
-            </motion.button>
-
             <motion.a
-              href="mailto:agergosoma@gmail.com"
-              className="rounded-full border border-border px-7 py-3.5 font-medium text-foreground transition-all hover:border-primary hover:text-primary"
+              href={GOOGLE_CALENDAR_BOOKING_LINK}
+              className="rounded-full bg-primary px-7 py-3.5 font-medium text-primary-foreground transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Email Me
+              Book a free discovery call
             </motion.a>
+
+            <motion.button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="rounded-full border border-border px-7 py-3.5 font-medium text-foreground transition-all hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Explore my projects
+            </motion.button>
           </div>
 
           <div className="mt-12 flex items-center justify-center gap-4">

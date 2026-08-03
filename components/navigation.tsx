@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { GOOGLE_CALENDAR_BOOKING_LINK } from '@/lib/site-config'
 
 interface NavigationProps {
   activeSection: string
@@ -44,12 +45,11 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
   }
 
   const navItems = [
-    { id: 'home', label: 'Home', index: '01' },
-    { id: 'services', label: 'Services', index: '02' },
-    { id: 'projects', label: 'Projects', index: '03' },
-    { id: 'skills', label: 'Skills', index: '04' },
-    { id: 'about', label: 'About', index: '05' },
-    { id: 'contact', label: 'Contact', index: '06' },
+    { id: 'services', label: 'Services', index: '01' },
+    { id: 'projects', label: 'Projects', index: '02' },
+    { id: 'skills', label: 'Skills', index: '03' },
+    { id: 'about', label: 'About', index: '04' },
+    { id: 'contact', label: 'Contact', index: '05' },
   ]
 
   if (!visible) return null
@@ -127,14 +127,14 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
             </div>
 
             {/* CTA Button */}
-            <motion.button
-              onClick={() => scrollToSection('contact')}
-              className="hidden md:block px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium"
+            <motion.a
+              href={GOOGLE_CALENDAR_BOOKING_LINK}
+              className="hidden rounded-full bg-primary px-6 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background md:block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Hire Me
-            </motion.button>
+              Book a call
+            </motion.a>
 
             {/* Mobile Menu Toggle */}
             <motion.button
@@ -214,15 +214,16 @@ export function Navigation({ activeSection, setActiveSection, visible }: Navigat
                   </motion.button>
                 ))}
                 
-                <motion.button
-                  onClick={() => scrollToSection('contact')}
+                <motion.a
+                  href={GOOGLE_CALENDAR_BOOKING_LINK}
+                  onClick={() => setMobileMenuOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium"
+                  className="mt-8 rounded-full bg-primary px-6 py-3 text-center text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  Hire Me
-                </motion.button>
+                  Book a call
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>

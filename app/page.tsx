@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { LoadingScreen } from '@/components/loading-screen'
 import { Hero } from '@/components/hero'
 import { Services } from '@/components/services'
+import { BookingCta } from '@/components/booking-cta'
 import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { About } from '@/components/about'
@@ -102,6 +103,17 @@ export default function Page() {
             transition={{ duration: 0.8 }}
           >
             <About />
+          </motion.section>
+
+          <motion.section
+            id="book-call"
+            className="py-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8 }}
+          >
+            <BookingCta />
           </motion.section>
           
           <motion.section 
