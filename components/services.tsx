@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Bot, BrainCircuit, ChartColumnBig, Sparkles } from 'lucide-react'
 
 import { Card } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { GOOGLE_CALENDAR_BOOKING_LINK } from '@/lib/site-config'
 
 const serviceCards = [
@@ -104,11 +105,20 @@ const detailedServices = [
 export function Services() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
+    if (isMobile) {
+      setInView(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
       },
       { threshold: 0.08, rootMargin: '-40px' }
     )
@@ -118,7 +128,7 @@ export function Services() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMobile])
 
   return (
     <div ref={containerRef} className="mx-auto max-w-7xl px-6 py-20">

@@ -4,15 +4,25 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export function Contact() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
+    if (isMobile) {
+      setInView(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
       },
       { threshold: 0.2, rootMargin: '-30px' }
     )
@@ -22,7 +32,7 @@ export function Contact() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMobile])
 
   const openCookiePreferences = () => {
     window.dispatchEvent(new Event('open-cookie-preferences'))

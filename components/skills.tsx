@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const skillCategories = [
   {
@@ -71,11 +72,20 @@ const skillCategories = [
 export function Skills() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
+    if (isMobile) {
+      setInView(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
       },
       { threshold: 0.1, rootMargin: '-80px' }
     )
@@ -85,7 +95,7 @@ export function Skills() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMobile])
 
   return (
     <div ref={containerRef} className="max-w-7xl mx-auto px-6">

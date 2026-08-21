@@ -87,9 +87,8 @@ export default function Page() {
             id="skills" 
             className="py-20"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
           >
             <Skills />
           </motion.section>
@@ -98,9 +97,8 @@ export default function Page() {
             id="about" 
             className="py-20"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <About />
           </motion.section>
@@ -109,9 +107,8 @@ export default function Page() {
             id="book-call"
             className="py-8"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.8 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
           >
             <BookingCta />
           </motion.section>
@@ -120,9 +117,8 @@ export default function Page() {
             id="contact" 
             className="min-h-screen py-20"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            animate={loadingComplete ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <Contact />
           </motion.section>
